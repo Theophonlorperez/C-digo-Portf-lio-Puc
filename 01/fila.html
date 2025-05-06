@@ -1,0 +1,57 @@
+
+<script>
+
+console.log('[Fila/Queue]')
+// qualquer tipo de dado
+// uma atras da outra, ordem importa
+//quem entra primeiro, sai primeiro 
+
+    var fila=[
+    'scripts.js',
+    'style.css',
+    'imagem.png'
+    
+    ];
+    //adiciona items no final 
+    fila.push('slydes.pdf')
+    //remove items do inicio
+    fila.shift();
+
+    // ===================================
+    // Receita para criar filas
+    // ===================================
+    // - enqueue = enfileirar 
+    // - dequeue = desinfileirar
+
+    class Queue{ // Class = receitya para criar objetos
+
+        constructor(){
+            this.data = [];
+
+        }
+        print(){
+            console.log(this.data);
+
+        }
+        enqueue(item){
+            this.data.push(item)
+        }
+
+        dequeue(){
+            this.data.shift();
+        }
+    }
+
+    // DESIGN DO CÓDIGO FIRST
+    var requests = new Queue();
+    // Open Closed
+    // Open: aberto para extensão 
+    // Closed: fechado para modificação 
+    requests.enqueue('scripts.js');
+    requests.print();
+    requests.dequeue();
+    requests.enqueue('style.css');
+    requests.enqueue('imagem.png');
+    requests.enqueue('slydes.pdf');
+
+</script>

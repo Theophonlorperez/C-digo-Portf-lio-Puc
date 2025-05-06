@@ -1,0 +1,33 @@
+
+<script>
+// Last in First out - Stack
+console.log('Pilha/Stack');
+class BrowserHistorystack {
+    constructor(){
+        this.cursor= 0;
+        this.data= [];
+    }
+    push(item){
+        this.cursor = this.cursor + 1 ;
+        this.data.push(item);
+    }
+    back(){// pop
+        this.cursor = this.cursor - 1 ;
+        //this.data.pop();
+    }
+    print(){
+        console.log('Cursor', this.cursor);
+        console.log('items atuais',this.data);
+    }
+}
+
+const history = new BrowserHistorystack();
+history.push('https://google.com');
+history.push('https://youtube.com');
+history.push('https://instagram.com');
+history.print();
+history.back();
+history.print();
+
+
+</script>
